@@ -1,15 +1,17 @@
-<body>
+<body style = "line-height: 1.5rem;font-family:monospace; font-size:1rem;">
 <?php
     $FEED = "https://careers.brandtholdings.com/feed/313300";
     $xml = simplexml_load_file($FEED);
     $description = $xml -> jobs -> job[0] -> description;
     //replace all double quotes with single quotes- will not output HTML otherwise
-    $description = str_replace('"', '\'', $description); //these str_replaces do not work?!?
-    $description = str_replace('“', '\'', $description); //  |
-    $description = str_replace('”', '\'', $description); // \/
+    $description = str_replace('"', '\'', $description);
+    $description = str_replace('“', '\'', $description);
+    $description = str_replace('”', '\'', $description);
+    $dom = new DOMDocument('1.0', 'utf-8');
+    $dom -> loadHTML($description, LIBXML_HTML_NOIMPLIED | LIBXML_HTML_NODEFDTD);
+    $description = str_replace('"', '\'', $dom -> saveHTML());
+    echo htmlspecialchars_decode($description);
 
-    $description = str_replace('Service', 'SERVICE', $description);     //test str_replace: this one works ¯\_(ツ)_/¯
-    
-    echo $description;
+
 ?>
 </body>
