@@ -1,5 +1,15 @@
 <head>
     <link rel="stylesheet" href="./style.css" type="text/css" />
+    <script type="text/javascript">
+        window.onload = function() {
+            if (parent) {
+                var oHead = document.getElementsByTagName("head")[0];
+                var arrStyleSheets = parent.document.getElementsByTagName("style");
+                for (var i = 0; i < arrStyleSheets.length; i++)
+                    oHead.appendChild(arrStyleSheets[i].cloneNode(true));
+            }
+        }
+</script>
 </head>
 <body>
 <?php
