@@ -5,9 +5,11 @@
             if (parent) {
                 var oHead = document.getElementsByTagName("head")[0];
                 var arrStyleSheets = parent.document.getElementsByTagName("style");
-                for (var i = 0; i < arrStyleSheets.length; i++)
-                    oHead.appendChild(arrStyleSheets[i].cloneNode(true));
+                var linkedStyleSheets = parent.document.getElementsByTagName("link");
+                for (var i = 0; i < arrStyleSheets.length; i++) oHead.appendChild(arrStyleSheets[i].cloneNode(true));
+                for (var i = 0; i < linkedStyleSheets.length; i++) oHead.appendChild(linkedStyleSheets[i].cloneNode(true));
             }
+
         }
 </script>
 </head>
