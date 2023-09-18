@@ -28,7 +28,7 @@
     }
 
     function jobsToTable($jobs){
-        $table = "<table>";
+        $table = "<table class = 'brandt-holdings-jobs'>";
         $table .= "<tr>";
         $table .= "<th>Job Title</th>";
         $table .= "<th>Location</th>";
