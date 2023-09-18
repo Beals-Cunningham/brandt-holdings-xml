@@ -1,0 +1,11 @@
+.brandt-holdings-jobs{
+    width:100%;
+}
+
+.brandt-holdings-jobs td, .brandt-holdings-jobs th{
+    text-align: left;
+}
+
+.brandt-holdings-jobs a{
+    appearance: button;
+}

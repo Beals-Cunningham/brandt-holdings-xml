@@ -31,12 +31,10 @@
         $table = "<table class = 'brandt-holdings-jobs'>";
         $table .= "<tr>";
         $table .= "<th>Job Title</th>";
-        $table .= "<th>Location</th>";
-        $table .= "<th>Reference Number</th>";
-        $table .= "<th>Business Unit</th>";
+
         $table .= "<th>Facility</th>";
         $table .= "<th>Date</th>";
-        $table .= "<th>URL</th>";
+        $table .= "<th>Listing</th>";
         $table .= "</tr>";
         foreach($jobs as $job){
             $table .= "<tr>";
@@ -44,18 +42,15 @@
             <summary></summary>
             <p>" . parseDescription($job) . "</p>
             </details>" . $job -> title . "</td>";
-            $table .= "<td>" . $job -> location . "</td>";
-            $table .= "<td>" . $job -> referencenumber . "</td>";
-            $table .= "<td>" . $job -> business_unit . "</td>";
+
             $table .= "<td>" . $job -> facility . "</td>";
             $table .= "<td>" . $job -> date . "</td>";
-            $table .= "<td><a href =" . $job -> url . ">View</a></td>";
+            $table .= "<td><a class = 'btn button btn-primary' href =" . $job -> url . ">View</a></td>";
             $table .= "</tr>";
         }
         $table .= "</table>";
         return $table;
     }
-
     echo jobsToTable($xml -> jobs -> job);
 
 ?>
