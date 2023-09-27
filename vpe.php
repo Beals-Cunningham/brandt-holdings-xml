@@ -15,6 +15,9 @@
 </head>
 <body>
 <?php
+    ini_set('display_errors', 1);
+    ini_set('display_startup_errors', 1);
+    error_reporting(E_ALL);
      $FEED = "https://careers.brandtholdings.com/feed/398000";
      $xml = simplexml_load_file($FEED);
 
@@ -64,6 +67,7 @@
         return $table;
     }
     echo jobsToTable($xml -> jobs -> job);
+    die();
 
 ?>
 </body>
